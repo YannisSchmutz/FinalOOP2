@@ -48,11 +48,11 @@ public class ProductList {
 
 
         // Read object list again, !!! Cast needed !!!
-        ArrayList<Product> p1 = (ArrayList<Product>) in.readObject();
-
+        ArrayList<Product> prLst = (ArrayList<Product>) in.readObject();
         // Print out
-        System.out.println("Product:");
-        System.out.println(p1);
+        System.out.println("Products:");
+        System.out.println(prLst);
+
 
 
         out.close();

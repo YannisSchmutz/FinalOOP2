@@ -45,6 +45,7 @@ public class BinaryDisplayer {
         String binary_name = args[0];
         System.out.println(binary_name);
 
+        // Maybe add here "src/readBinary/"
         byte[] bytes = Files.readAllBytes(Paths.get(binary_name));
         int counter = 0;
         for (byte b : bytes){

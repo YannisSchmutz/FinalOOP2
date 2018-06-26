@@ -26,7 +26,6 @@ public class FileProg1EH {
       try {
         while (in.hasNextLine()) {
           in.nextLine();
-
           lineNumber++;
         }
         in.close();

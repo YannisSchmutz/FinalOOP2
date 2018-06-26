@@ -46,6 +46,7 @@ public class FileCounter {
             }
 
             Scanner lineIn = new Scanner(line);
+            // Loop trough string
             while (lineIn.hasNext()){
                 lineIn.next();
                 wordCount++;

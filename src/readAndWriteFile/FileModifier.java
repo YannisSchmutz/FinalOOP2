@@ -40,10 +40,12 @@ public class FileModifier {
         for (int i = 0; i < lines.size(); i++) {
 
             String s = lines.get(i);
+            // Sets list entry at index <i>
             lines.set(i, "/* " + (i + 1) + " */ " + s);
 
         }
 
+        // Write list of strings to file
         Files.write(out, lines);
         System.out.print("Done!");
     }
