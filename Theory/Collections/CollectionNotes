@@ -1,0 +1,24 @@
+Collections
+===========
+
+Iterator
+--------
+An Iterator is an object that allows traversing an Iterable.
+    Iterable: the object to be traversed (e.g., a Collection, container)
+    Iterator: returns object by object of the iterable until there are no more objects. The iterator is exhausted.
+
+
+Collection<E> Interface
+------------------------
+* A collection represents an iterable group of elements.
+* There are various types of collections, depending on how the elements are stored and on how manipulations work:
+    * Some implementations allow duplicate elements, others do not.
+    * Some are ordered, others are unordered.
+    * Some have a fixed (or maximal) size, others have a variable size.
+    * Some can be modified, others are immutable.
+* Extensions of Collection Interface
+    * List<E>
+    * Queue<E>
+    * Dequeue<E>
+    * Set<E>
+    * SortedSet<E>

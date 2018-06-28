@@ -1,0 +1,69 @@
+Generics
+========
+
+
+
+Identifier (Naming Conventions for Type Parameters)
+---------------------------------------------------
+
+* T for a general generic type (for everything other than below)
+* N for numbers
+* E for elements in a collection (e.g., in a list, in a set, etc.)
+* K for keys in a map
+* V for values in a map
+* S, U, W for additional generic types
+
+
+Types
+-----
+Note: Primitive types(boolean,byte,char,short,int,long,double,float) CANNOT be used as type parameters!
+      -> Therefore you have to use "Integer" instead of "int"
+In general: -> Use the wrapped object types instead: Boolean, Byte, Char, Short, Integer, Long, Double, Float
+
+
+
+Bound
+-----
+* Java assumes that "public static <E> E min(E[] array) "
+  <E> is the most basic type (Object). If you use methods like e.g "compareTo", your code will fail.
+  Due to the fact that Object has no "compareTo" method.
+  -> Use bounds
+     public static <E extends Comparable<E>> E min(E[] array)
+     public static <E extends Comparable<? super E>> E min(E[] array)  -> (better solution)
+
+
+* The declaration:   class Box<T> { }, is a shortcut for    class Box<T extends Object> { }
+
+* Extends = upperbound
+    * A Bounded Type Parameter T must be subtype of some bounding type.
+    * Syntax:
+        <T extends BoundingType>
+        <T extends Serializable & Cloneable>
+
+    * BoundingType can be a CLASS or INTERFACE, extends means "extends or implements".
+      Class must be at first, interfaces after.
+
+
+
+
+Raw Types
+---------
+
+
+
+Wildcard Types
+--------------
+
+* Box<?> is a shortcut for Box<? extends Objects>.
+* Wildcards ? cannot be used as normal type, i.e., you cannot define a variable "? a".
+* Wildcards ? can be used as values for type parameters, i.e., "List<?> a".
+* Wildcards can be used in declaration of ...
+    * local variables
+    * instance variables
+    * static variables
+    * method parameters, e.g., "List<?> a"
+    * return values
+
+
+
+PECS = Producer Extends, Consumer Super
