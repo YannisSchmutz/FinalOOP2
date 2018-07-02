@@ -9,16 +9,16 @@ public class ProducerConsumer {
         Channel<Integer> channel = new Channel<>();
 
         Thread producer = new Thread(() -> {
-            Random random_nbr_generater = new Random();
+            Random random_nbr_generator = new Random();
             for (int i = 0; i < 10; i++){
 
                 while (!Thread.interrupted()){
-                    int item = random_nbr_generater.nextInt(100);
+                    int item = random_nbr_generator.nextInt(100);
                     System.out.println("Going to put " + item + " into channel");
 
                     try {
                         channel.putItem(item);
-                        Thread.sleep(random_nbr_generater.nextInt(1000));   // ms
+                        Thread.sleep(random_nbr_generator.nextInt(1000));   // ms
                     } catch (InterruptedException e) {
                         //e.printStackTrace();
                         return; // TODO: Important to return cause "interrupted"-flag is already reset!!!!

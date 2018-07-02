@@ -1,0 +1,30 @@
+Streams
+=======
+
+* Constant Memory:
+    - A stream does not store any element. It is not a data structure.
+* Streams are immutable:
+    - An operation creates a new stream as a result, it does not modify the source stream.
+* Lazy:
+    - Many stream operations can be performed lazily.
+      The operations is not performed until the data is needed by a non-lazy downstream operator or a terminal operator.
+      This opens up opportunities for optimization.
+* No Bounds:
+    - Streams can be unbounded (infinite size).
+      In contrast, Collections require memory and, thus, must have a finite size.
+* Once consumable:
+    - The elements of a stream can only be consumed once during the lifetime of the stream.
+      As stream can only have one "downstream operator".
+      Java 8 Streams, unfortunately, do not allow general data flow graphs in which a stream from an operator is
+       consumed by multiple operators.
+* Parallelism:
+    - Operations can be executed in on data items in parallel for parallel streams.
+      This can improve performance (but may not always).
+
+
+* There are specialized classes for the following three primitive types:
+    - int -> IntegerStream
+    - long -> ̀LongStream
+    - double -> DoubleStream
+    * There is no BooleanStream, no FloatStream, no ShortStream, CharStream, and no ByteStream!
+    * Note: >These classes do not implement Stream<T>, i.e., IntStream is not a Stream<Integer>.
