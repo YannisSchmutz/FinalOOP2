@@ -163,6 +163,20 @@ public class SomeExamples {
         return changePi(str.substring(0, str.length()-1)) + is_pi.substring(1, 2);
     }
 
+    public static String noX(String str) {
+        // removes all x
+        if(str.length() == 0){
+            return "";
+        }
+
+        if (str.charAt(str.length()-1) == 'x'){
+            str = str.substring(0, str.length()-1);
+            return noX(str);
+        }
+
+        return noX(str.substring(0, str.length()-1)) + str.charAt(str.length()-1);
+    }
+
 
 
     public static void main(String[] args){
